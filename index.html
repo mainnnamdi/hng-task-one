@@ -5,14 +5,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>Personal Page</title>
 </head>
 <body>
-  <h1 data-testid="slackUserName">Steven Olisakwe</h1>
+  <h1 data-testid="slackUserName">STEVEN OLISAKWE</h1>
   <img src="profilepicture.jpg" alt="Slack Username" data-testid="slackDisplayImage">
   <p data-testid="currentDayOfTheWeek">Monday</p>
-  <p data-testid="currentUTCTime">12:00 PM </p>
+  <p data-testid="currentUTCTime">2:00 PM </p>
   <p data-testid="myTrack">Frontend</p>
-  <a href="https://github.com/mainnnamdi/hng-task-one" data-testid="githubURL">GitHub Repository</a>
+  <a href="https://github.com/mainnnamdi/hng-task-one" data-testid="githubURL">My GitHub Repository</a>
+  <script>
+    function updateTimeAndDayOfWeek() {
+        
+        const updateUTCTime = () => {
+            const currentDate = new Date();
+            const options = { timeZone: 'UTC', hour12: false };
+            const formattedTime = currentDate.toLocaleTimeString('en-US', options);
+
+            
+            const timeElement = document.querySelector('[data-testid="currentUTCTime"]');
+            timeElement.textContent = formattedTime;
+        };
+
+        
+        const updateDayOfWeek = () => {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const currentDate = new Date();
+            const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
+
+            
+            const dayOfWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+            dayOfWeekElement.textContent = dayOfWeek;
+        };
+
+       
+        updateUTCTime();
+        updateDayOfWeek();
+
+        
+        setInterval(updateUTCTime, 1000);
+    }
+
+    
+    updateTimeAndDayOfWeek();
+  </script>
 </body>
 </html>
