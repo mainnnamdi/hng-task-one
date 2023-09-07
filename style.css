@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f0f0f0;
+  background-color: #000;
   margin: 0;
   padding: 0;
   
@@ -10,8 +10,8 @@ body {
 
 [data-testid="slackUserName"] {
   font-size: 24px;
-  color: #333;
-  margin-top: 20px;
+  color: #f0f0f0;
+  margin-top: 80px;
 }
 
 
@@ -26,13 +26,13 @@ body {
 
 [data-testid="currentDayOfTheWeek"] {
   font-size: 18px;
-  color: #555;
+  color: #f0f0f0;
 }
 
 
 [data-testid="currentUTCTime"] {
   font-size: 18px;
-  color: #555;
+  color: #f0f0f0;
 }
 
 
@@ -40,12 +40,14 @@ body {
   font-size: 20px;
   color: #007BFF;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 
 [data-testid="githubURL"] {
   font-size: 16px;
   color: #007BFF;
+  font-style: italic;
   text-decoration: none;
   transition: color 0.3s;
   
